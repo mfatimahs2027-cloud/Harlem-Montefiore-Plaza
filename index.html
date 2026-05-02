@@ -2,94 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Montefiore Square Park Redesign</title>
+  <title>Montefiore Square – Strongly Typed Edition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="dark-mode">
 
-<div id="wrapper">
+<!-- PROFILE BADGE -->
+<div id="profile-badge">M & S</div>
 
-  <!-- HEADER -->
-  <header id="header">
-    <h1 class="site-title">Montefiore Square</h1>
+<!-- HEADER -->
+<header id="header">
+  <h1>Montefiore Square Park Redesign</h1>
+  <p>Harlem community park improvement proposal</p>
 
-    <nav class="main-nav">
-      <a href="#about">About</a>
-      <a href="#users">Users</a>
-      <a href="#improvements">Improvements</a>
-      <a href="#budget">Budget</a>
-    </nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#users">Users</a>
+    <a href="#improvements">Improvements</a>
+    <a href="#budget">Budget</a>
+    <a href="#links">Links</a>
+  </nav>
 
-    <button id="mode-toggle">Toggle Mode</button>
-  </header>
+  <button id="mode-toggle">Toggle Mode</button>
+</header>
 
-  <!-- HERO -->
-  <section class="panel hero">
-    <h2>Montefiore Square Park Redesign</h2>
-    <p>Harlem community park improvement proposal</p>
-    <p>Manhattan • Mahnoor Fatima & Shamor Johnson</p>
-    <p>Montefiore Square is located at Broadway, Hamilton Place, and West 138th Street. This redesign improves safety, greenery, usability, and community identity.</p>
+<!-- FEATURED LINKS AT TOP -->
+<section id="featured" class="panel grid-2">
+
+  <!-- MAP -->
+  <a class="resource-card" href="https://www.bing.com/maps/search?FORM=HDRSC6&q=Harlem+Montefiore+Plaza&cp=40.808792%7E-73.949867&lvl=13.5&style=r" target="_blank">
+    <img src="https://www.harlemworldmagazine.com/wp-content/uploads/2019/11/ny-design-final-6x4-1.jpg">
+    <h3>Montefiore Plaza Map</h3>
+    <p>Explore the plaza location and surrounding Harlem neighborhood.</p>
+  </a>
+
+  <!-- RESEARCH PAPER -->
+  <a class="resource-card" href="https://docs.google.com/document/d/1weDlWgdTxTsQWjpderH7LsIwDtYiK2gsdhf-s6L5PHA/edit?usp=sharing" target="_blank">
+    <div class="resource-placeholder">Research Paper</div>
+    <h3>Research Paper — By M & S</h3>
+    <p>Full project research and documentation.</p>
+  </a>
+
+</section>
+
+<!-- MAIN CONTENT -->
+<div id="main">
+
+  <!-- INTRO -->
+  <section class="panel">
+    <h2>Montefiore Square</h2>
+    <p><strong>Manhattan • Mahnoor Fatima & Shamor Johnson</strong></p>
+    <p>
+      Montefiore Square is located at Broadway, Hamilton Place, and West 138th Street.
+      This redesign improves safety, greenery, usability, and community identity.
+    </p>
   </section>
 
   <!-- ABOUT -->
   <section id="about" class="panel">
-    <header class="panel-header">
-      <h2>About the Park</h2>
-    </header>
-
-    <div class="grid-2">
-      <div>
-        <ul>
-          <li>Open lawn with terraced stone seating</li>
-          <li>Garden with perennial plants</li>
-          <li>Paved plaza used for events, markets, and performances</li>
-        </ul>
-      </div>
-
-      <div>
-        <p><strong>Location:</strong> Broadway, Hamilton Place, and West 138th Street, Harlem.</p>
-      </div>
-    </div>
+    <h2>About the Park</h2>
+    <ul>
+      <li>Open lawn with terraced stone seating</li>
+      <li>Garden with perennial plants</li>
+      <li>Paved plaza used for events, markets, and performances</li>
+    </ul>
   </section>
 
   <!-- USERS -->
   <section id="users" class="panel">
-    <header class="panel-header">
-      <h2>Users & Needs</h2>
-    </header>
+    <h2>Users & Needs</h2>
 
-    <div class="grid-2">
-      <div>
-        <h3>Users</h3>
-        <ul>
-          <li>Local residents: shade, seating, cultural design</li>
-          <li>Commuters: clear paths, quick-use space</li>
-          <li>Businesses: benefit from foot traffic</li>
-          <li>Visitors: need directions and identity</li>
-        </ul>
-      </div>
+    <h3>Users</h3>
+    <ul>
+      <li>Local residents: shade, seating, cultural design</li>
+      <li>Commuters: clear paths, quick-use space</li>
+      <li>Businesses: benefit from foot traffic</li>
+      <li>Visitors: need directions and identity</li>
+    </ul>
 
-      <div>
-        <h3>Problems</h3>
-        <ul>
-          <li>Pedestrian conflicts</li>
-          <li>Seating not flexible</li>
-          <li>Poor lighting</li>
-          <li>Mostly pass-through space</li>
-        </ul>
-      </div>
-    </div>
+    <h3>Problems</h3>
+    <ul>
+      <li>Pedestrian conflicts</li>
+      <li>Seating not flexible</li>
+      <li>Poor lighting</li>
+      <li>Mostly pass-through space</li>
+    </ul>
   </section>
 
   <!-- BEFORE & AFTER -->
   <section id="improvements" class="panel">
-    <header class="panel-header">
-      <h2>Before & After</h2>
-    </header>
+    <h2>Before & After</h2>
 
-    <div class="before-after-grid">
+    <div class="grid-2">
 
       <!-- BEFORE -->
       <div>
@@ -131,10 +137,7 @@
 
   <!-- BUDGET -->
   <section id="budget" class="panel">
-    <header class="panel-header">
-      <h2>Budget & Cost Plan</h2>
-    </header>
-
+    <h2>Budget & Cost Plan</h2>
     <ul>
       <li>Shade sails — $30k–$55k</li>
       <li>Moveable seating — $15k–$25k</li>
@@ -145,38 +148,13 @@
     </ul>
   </section>
 
-  <!-- LINKS -->
-  <section id="links" class="panel">
-    <header class="panel-header">
-      <h2>Additional Resources</h2>
-    </header>
-
-    <div class="grid-2">
-
-      <!-- MAP -->
-      <a class="resource-card" href="https://www.bing.com/maps/search?FORM=HDRSC6&q=Harlem+Montefiore+Plaza&cp=40.808792%7E-73.949867&lvl=13.5&style=r" target="_blank">
-        <img src="https://www.harlemworldmagazine.com/wp-content/uploads/2019/11/ny-design-final-6x4-1.jpg">
-        <h3>Montefiore Plaza Map</h3>
-        <p>Explore the plaza location and surrounding Harlem neighborhood.</p>
-      </a>
-
-      <!-- RESEARCH PAPER -->
-      <a class="resource-card" href="https://docs.google.com/document/d/1weDlWgdTxTsQWjpderH7LsIwDtYiK2gsdhf-s6L5PHA/edit?usp=sharing" target="_blank">
-        <div class="resource-placeholder">Research Paper</div>
-        <h3>Research Paper</h3>
-        <p>By M & S — full project research and documentation.</p>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer id="footer">
-    Montefiore Square Park Redesign — Harlem, Manhattan  
-    <br>Created by Mahnoor Fatima & Shamor Johnson
-  </footer>
-
 </div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  Montefiore Square Park Redesign — Harlem, Manhattan  
+  <br>Created by Mahnoor Fatima & Shamor Johnson
+</footer>
 
 <!-- MODE TOGGLE SCRIPT -->
 <script>
