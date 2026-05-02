@@ -3,20 +3,19 @@
 body, html { margin: 0; padding: 0; }
 
 body {
-  font-family: system-ui, sans-serif;
-  line-height: 1.6;
+  font-family: "Georgia", serif;
+  line-height: 1.7;
   transition: background 0.5s ease, color 0.5s ease;
 }
 
 /* LIGHT MODE */
 body.light-mode {
-  background: url("https://i.pinimg.com/736x/bc/93/3e/bc933e9f77ea0c0773d63986c2ad818e.jpg") center/cover fixed;
-  color: #111;
+  background: url("https://i.pinimg.com/736x/86/4d/ea/864dea64ab1bb7bd1786cbf6fb915a8c.jpg") center/cover fixed;
+  color: #222;
 }
 
 body.light-mode .panel {
   background: rgba(255, 255, 255, 0.85);
-  color: #111;
 }
 
 /* DARK MODE */
@@ -33,96 +32,87 @@ body.dark-mode .panel {
 #wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 /* HEADER */
 #header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
-.site-title {
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin: 0;
+#header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
 }
 
-.main-nav a {
-  margin-left: 1rem;
+#header nav a {
+  margin: 0 1rem;
   text-decoration: none;
+  font-weight: bold;
   color: inherit;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
-/* MODE TOGGLE */
 #mode-toggle {
-  background: #4ade80;
-  color: #000;
-  border: none;
+  margin-top: 1rem;
   padding: 0.5rem 1rem;
+  background: #4ade80;
+  border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
+  font-weight: bold;
 }
 
-#mode-toggle:hover {
+/* PROFILE BADGE */
+#profile-badge {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   background: #22c55e;
+  color: #000;
+  padding: 0.6rem 1rem;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 0 12px #22c55e, 0 0 20px white;
+  z-index: 999;
 }
 
 /* PANELS */
 .panel {
-  padding: 1.75rem;
-  border-radius: 8px;
-  margin-top: 1.5rem;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
   backdrop-filter: blur(4px);
 }
 
-.panel-header h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.5rem;
+.panel h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* GRID */
 .grid-2 {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
 @media (max-width: 800px) {
   .grid-2 { grid-template-columns: 1fr; }
 }
 
-/* BEFORE & AFTER */
-.before-after-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-@media (max-width: 800px) {
-  .before-after-grid { grid-template-columns: 1fr; }
-}
-
+/* BEFORE & AFTER IMAGES */
 .ba-image img {
   width: 100%;
-  height: 180px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 6px;
-  box-shadow: 0 0 15px #fff, 0 0 25px #22c55e;
+  border-radius: 8px;
+  box-shadow: 0 0 15px white, 0 0 25px #22c55e;
 }
 
 .ba-image figcaption {
-  font-size: 0.85rem;
-  margin-top: 0.3rem;
-  opacity: 0.9;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
 }
 
 /* RESOURCE CARDS */
@@ -131,22 +121,22 @@ body.dark-mode .panel {
   text-decoration: none;
   color: inherit;
   padding: 1rem;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.05);
-  box-shadow: 0 0 15px rgba(0,255,150,0.3);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 15px rgba(0,255,150,0.4);
   transition: 0.3s;
 }
 
 .resource-card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 25px rgba(0,255,150,0.6);
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(0,255,150,0.7);
 }
 
 .resource-card img,
 .resource-placeholder {
   width: 100%;
-  height: 180px;
-  border-radius: 6px;
+  height: 200px;
+  border-radius: 8px;
   object-fit: cover;
   margin-bottom: 0.5rem;
 }
@@ -156,15 +146,14 @@ body.dark-mode .panel {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.1rem;
+  color: white;
+  font-weight: bold;
 }
 
 /* FOOTER */
 #footer {
   text-align: center;
-  margin-top: 2rem;
-  padding: 1rem 0;
+  padding: 2rem 0;
   opacity: 0.8;
 }
+
