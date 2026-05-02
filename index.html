@@ -12,20 +12,20 @@
 <!-- PROFILE BADGE -->
 <div id="profile-badge">M & S</div>
 
+<!-- FLOATING NAVIGATION -->
+<nav id="floating-nav">
+  <a href="#about">About</a>
+  <a href="#users">Users</a>
+  <a href="#improvements">Improvements</a>
+  <a href="#budget">Budget</a>
+  <a href="#links">Links</a>
+</nav>
+
 <!-- HEADER -->
 <header id="header">
   <h1>Montefiore Square Park Redesign</h1>
   <p>Harlem community park improvement proposal</p>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#users">Users</a>
-    <a href="#improvements">Improvements</a>
-    <a href="#budget">Budget</a>
-    <a href="#links">Links</a>
-  </nav>
-
-  <button id="mode-toggle">Toggle Mode</button>
+  <p class="authors">By Mahnoor Fatima and Shamor Johnson</p>
 </header>
 
 <!-- FEATURED LINKS AT TOP -->
@@ -40,7 +40,7 @@
 
   <!-- RESEARCH PAPER -->
   <a class="resource-card" href="https://docs.google.com/document/d/1weDlWgdTxTsQWjpderH7LsIwDtYiK2gsdhf-s6L5PHA/edit?usp=sharing" target="_blank">
-    <div class="resource-placeholder">Research Paper</div>
+    <img src="https://i.pinimg.com/736x/0e/21/2d/0e212d98aa0a33ebedf6a020de6c10e1.jpg" class="resource-img">
     <h3>Research Paper — By M & S</h3>
     <p>Full project research and documentation.</p>
   </a>
@@ -54,33 +54,78 @@
   <section class="panel">
     <h2>Montefiore Square</h2>
     <p><strong>Manhattan • Mahnoor Fatima & Shamor Johnson</strong></p>
+
     <p>
       Montefiore Square is located at Broadway, Hamilton Place, and West 138th Street.
       This redesign improves safety, greenery, usability, and community identity.
     </p>
-  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="panel">
-    <h2>About the Park</h2>
+    <h3>About the Park</h3>
     <ul>
       <li>Open lawn with terraced stone seating</li>
       <li>Garden with perennial plants</li>
-      <li>Paved plaza used for events, markets, and performances</li>
     </ul>
+  </section>
+
+  <!-- ABOUT THE PARK SLIDESHOW -->
+  <section class="panel">
+    <h2>Before the Redesign — Slideshow</h2>
+
+    <div class="slideshow-container">
+
+      <!-- Slide 1 -->
+      <div class="slide fade">
+        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finishe3___20140716485.jpg">
+        <p class="caption">Original plaza layout with heavy pavement and limited greenery.</p>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="slide fade">
+        <img src="https://www.nyc.gov/assets/dep/images/content/pages/whats-new/news/2022/22-003a.jpg">
+        <p class="caption">Infrastructure conditions before redesign improvements.</p>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="slide fade">
+        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished-6___20140715402.jpg">
+        <p class="caption">Concrete-heavy plaza with minimal seating options.</p>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="slide fade">
+        <img src="https://static.wixstatic.com/media/f1eca6_8a667241b3994378a12846c92cc1a3a8~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/f1eca6_8a667241b3994378a12846c92cc1a3a8~mv2.jpg">
+        <p class="caption">Lack of shade and community gathering spaces.</p>
+      </div>
+
+      <!-- Arrows -->
+      <a class="prev">⚘</a>
+      <a class="next">⚘</a>
+
+    </div>
   </section>
 
   <!-- USERS -->
   <section id="users" class="panel">
     <h2>Users & Needs</h2>
 
-    <h3>Users</h3>
-    <ul>
-      <li>Local residents: shade, seating, cultural design</li>
-      <li>Commuters: clear paths, quick-use space</li>
-      <li>Businesses: benefit from foot traffic</li>
-      <li>Visitors: need directions and identity</li>
-    </ul>
+    <div class="grid-3">
+
+      <figure class="user-img">
+        <img src="https://www.nycgovparks.org/photo_gallery/full_size/25006.jpg">
+        <figcaption>Residents need shade, seating, and cultural identity.</figcaption>
+      </figure>
+
+      <figure class="user-img">
+        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished-2___20140716876.jpg">
+        <figcaption>Commuters need clear paths and safe movement.</figcaption>
+      </figure>
+
+      <figure class="user-img">
+        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished4___20140716056.jpg">
+        <figcaption>Visitors and businesses benefit from activity and identity.</figcaption>
+      </figure>
+
+    </div>
 
     <h3>Problems</h3>
     <ul>
@@ -138,6 +183,7 @@
   <!-- BUDGET -->
   <section id="budget" class="panel">
     <h2>Budget & Cost Plan</h2>
+
     <ul>
       <li>Shade sails — $30k–$55k</li>
       <li>Moveable seating — $15k–$25k</li>
@@ -146,6 +192,11 @@
       <li>Lighting — $10k–$20k</li>
       <li><strong>Total Cost:</strong> $87k–$158k</li>
     </ul>
+
+    <div class="grid-2">
+      <div class="graph-placeholder">Pie Graph Placeholder<br><span>Focus Distribution (%)</span></div>
+      <div class="graph-placeholder">Line Graph Placeholder<br><span>Predicted Public & Economic Growth</span></div>
+    </div>
   </section>
 
 </div>
@@ -156,17 +207,29 @@
   <br>Created by Mahnoor Fatima & Shamor Johnson
 </footer>
 
-<!-- MODE TOGGLE SCRIPT -->
+<!-- SLIDESHOW SCRIPT -->
 <script>
-  const toggle = document.getElementById("mode-toggle");
-  const body = document.body;
+let slideIndex = 0;
+showSlides();
 
-  toggle.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
-    body.classList.toggle("dark-mode");
-  });
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 4000);
+}
+
+document.querySelector(".prev").onclick = () => {
+  slideIndex -= 2;
+  showSlides();
+};
+
+document.querySelector(".next").onclick = () => {
+  showSlides();
+};
 </script>
 
 </body>
 </html>
-
