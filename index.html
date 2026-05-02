@@ -1,198 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Montefiore Square</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Montefiore Square Park Redesign</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="wrapper">
 
-<header class="topbar">
-  <h1>Montefiore Square</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#users">Users</a>
-    <a href="#improvements">Improvements</a>
-    <a href="#budget">Budget</a>
-  </nav>
-</header>
+    <!-- Header -->
+    <header id="header">
+      <h1 class="site-title">Montefiore Square</h1>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#users">Users</a>
+        <a href="#improvements">Improvements</a>
+        <a href="#budget">Budget</a>
+      </nav>
+    </header>
 
-<main class="page">
+    <!-- Main -->
+    <main id="main">
 
-<section class="content">
+      <!-- Hero / Intro -->
+      <section id="intro" class="panel hero">
+        <div class="hero-text">
+          <h2>Montefiore Square Park Redesign</h2>
+          <p class="subtitle">Harlem community park improvement proposal</p>
+          <p class="meta">
+            Manhattan &bull; Mahnoor Fatima &amp; Shamor Johnson
+          </p>
+          <p class="lead">
+            Montefiore Square is located at Broadway, Hamilton Place, and West 138th Street.
+            This redesign improves safety, greenery, usability, and community identity.
+          </p>
+        </div>
+      </section>
 
-<!-- HERO -->
-<article class="post-card hero">
-  <div class="post-header">
-    <div>
-      <h2>Montefiore Square Park Redesign</h2>
-      <p>Harlem community park improvement proposal</p>
-    </div>
-    <div class="meta">
-      <strong>Manhattan</strong>
-      <span>Mahnoor Fatima & Shamor Johnson</span>
-    </div>
+      <!-- About the Park -->
+      <section id="about" class="panel">
+        <header class="panel-header">
+          <h2>About the Park</h2>
+        </header>
+        <div class="panel-body grid-2">
+          <div>
+            <p>
+              Montefiore Square Park Redesign focuses on transforming a mostly pass-through space
+              into a welcoming neighborhood destination that supports daily life, culture, and
+              local business.
+            </p>
+            <ul class="bullet-list">
+              <li>Open lawn with terraced stone seating</li>
+              <li>Garden with perennial plants</li>
+              <li>Paved plaza used for events, markets, and performances</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <h3>Location</h3>
+            <p>
+              Broadway, Hamilton Place, and West 138th Street, Harlem, Manhattan.
+            </p>
+            <p>
+              The redesign improves safety, greenery, usability, and community identity while
+              supporting local businesses and community events.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Users & Needs -->
+      <section id="users" class="panel">
+        <header class="panel-header">
+          <h2>Users &amp; Needs</h2>
+        </header>
+        <div class="panel-body grid-2">
+          <div>
+            <h3>Users</h3>
+            <ul class="bullet-list">
+              <li><strong>Local residents:</strong> shade, seating, cultural design</li>
+              <li><strong>Commuters:</strong> clear paths, quick-use space</li>
+              <li><strong>Businesses:</strong> benefit from foot traffic</li>
+              <li><strong>Visitors:</strong> need directions and identity</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Problems</h3>
+            <ul class="bullet-list">
+              <li>Pedestrian conflicts</li>
+              <li>Seating not flexible</li>
+              <li>Poor lighting</li>
+              <li>Mostly pass-through space</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Before & After -->
+      <section id="improvements" class="panel">
+        <header class="panel-header">
+          <h2>Before &amp; After</h2>
+          <p>Four key changes that reshape Montefiore Square.</p>
+        </header>
+        <div class="panel-body before-after-grid">
+
+          <!-- Before column -->
+          <article class="ba-column">
+            <h3>Before</h3>
+            <div class="ba-image placeholder before">
+              <span>Before Image 1</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Not enough greenery or shade</li>
+              <li>Too much hard pavement</li>
+              <li>Limited seating</li>
+              <li>Low activity</li>
+            </ul>
+            <div class="ba-image placeholder before">
+              <span>Before Image 2</span>
+            </div>
+          </article>
+
+          <!-- After column -->
+          <article class="ba-column">
+            <h3>After</h3>
+            <div class="ba-image placeholder after">
+              <span>After Image 1</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Added greenery and seating</li>
+              <li>Installed trash &amp; recycling bins</li>
+              <li>Created more shade</li>
+              <li>Added shops &amp; activity</li>
+            </ul>
+            <div class="ba-image placeholder after">
+              <span>After Image 2</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- Budget & Cost Plan -->
+      <section id="budget" class="panel">
+        <header class="panel-header">
+          <h2>Budget &amp; Cost Plan</h2>
+        </header>
+        <div class="panel-body grid-2">
+          <div>
+            <table class="budget-table">
+              <thead>
+                <tr>
+                  <th>Improvement</th>
+                  <th>Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Shade sails</td>
+                  <td>$30k–$55k</td>
+                </tr>
+                <tr>
+                  <td>Moveable seating</td>
+                  <td>$15k–$25k</td>
+                </tr>
+                <tr>
+                  <td>Vendor market zone</td>
+                  <td>$25k–$45k</td>
+                </tr>
+                <tr>
+                  <td>Wayfinding signs</td>
+                  <td>$7k–$13k</td>
+                </tr>
+                <tr>
+                  <td>Lighting</td>
+                  <td>$10k–$20k</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td><strong>Total Cost</strong></td>
+                  <td><strong>$87k–$158k</strong></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+
+          <!-- Pie chart -->
+          <div class="pie-wrapper">
+            <h3>Cost Distribution</h3>
+            <div class="pie-chart">
+              <!-- Simple SVG pie chart with approximate proportions -->
+              <svg viewBox="0 0 32 32">
+                <!-- Background circle -->
+                <circle r="16" cx="16" cy="16" class="pie-bg" />
+                <!-- Shade sails (largest slice) -->
+                <circle r="16" cx="16" cy="16"
+                        class="pie-slice shade"
+                        stroke-dasharray="35 65"
+                        transform="rotate(-90) translate(-32 0)" />
+                <!-- Vendor market zone -->
+                <circle r="16" cx="16" cy="16"
+                        class="pie-slice vendor"
+                        stroke-dasharray="25 75"
+                        transform="rotate(36) translate(-32 0)" />
+                <!-- Moveable seating -->
+                <circle r="16" cx="16" cy="16"
+                        class="pie-slice seating"
+                        stroke-dasharray="20 80"
+                        transform="rotate(90) translate(-32 0)" />
+                <!-- Lighting -->
+                <circle r="16" cx="16" cy="16"
+                        class="pie-slice lighting"
+                        stroke-dasharray="12 88"
+                        transform="rotate(130) translate(-32 0)" />
+                <!-- Wayfinding -->
+                <circle r="16" cx="16" cy="16"
+                        class="pie-slice wayfinding"
+                        stroke-dasharray="8 92"
+                        transform="rotate(165) translate(-32 0)" />
+              </svg>
+            </div>
+            <ul class="pie-legend">
+              <li><span class="dot shade"></span> Shade sails</li>
+              <li><span class="dot seating"></span> Moveable seating</li>
+              <li><span class="dot vendor"></span> Vendor market zone</li>
+              <li><span class="dot wayfinding"></span> Wayfinding signs</li>
+              <li><span class="dot lighting"></span> Lighting</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why This Matters -->
+      <section id="why" class="panel">
+        <header class="panel-header">
+          <h2>Why This Matters</h2>
+        </header>
+        <div class="panel-body grid-2">
+          <div>
+            <p>
+              The transformation of Montefiore Plaza brings social and environmental benefits by
+              creating a welcoming space for community activities, improving safety, and supporting
+              local businesses. Added green infrastructure enhances air quality, reduces heat, and
+              manages stormwater, making the plaza more sustainable and improving overall quality
+              of life.
+            </p>
+            <p>
+              Montefiore Plaza’s transformation includes major infrastructure upgrades such as new
+              water, sewer, and drainage systems to prevent flooding and improve stormwater
+              management. Proper grading and underground systems help control rainwater, especially
+              around the terraced lawn.
+            </p>
+          </div>
+          <div>
+            <p>
+              Additional utilities support lighting, irrigation, and public amenities, while strong
+              foundations ensure durability.
+            </p>
+            <p>
+              The long-term success depends on maintenance costing about $90,000 per year, covering
+              sanitation, horticulture, and repairs.
+            </p>
+            <ul class="bullet-list">
+              <li><strong>Sanitation:</strong> cleaning and trash collection</li>
+              <li><strong>Horticulture:</strong> plant care, watering, pruning</li>
+              <li><strong>Infrastructure repairs:</strong> paths, lighting, seating safety</li>
+            </ul>
+            <p>
+              Overall, ongoing maintenance supports sustainability and keeps the plaza functional
+              for the community long-term.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>Montefiore Square Park Redesign &mdash; Harlem, Manhattan</p>
+      <p>Concept by Mahnoor Fatima &amp; Shamor Johnson</p>
+    </footer>
+
   </div>
-
-  <img src="https://via.placeholder.com/1000x400?text=Main+Park+Image">
-
-  <p>
-    Montefiore Square is located at Broadway, Hamilton Place, and West 138th Street.
-    This redesign improves safety, greenery, usability, and community identity.
-  </p>
-</article>
-
-<!-- ABOUT -->
-<article class="post-card" id="about">
-  <div class="post-header"><h2>About the Park</h2></div>
-  <div class="card-body">
-    <ul>
-      <li>Open lawn with terraced stone seating</li>
-      <li>Garden with perennial plants</li>
-      <li>Paved plaza used for events, markets, and performances</li>
-    </ul>
-  </div>
-</article>
-
-<!-- USERS -->
-<article class="post-card" id="users">
-  <div class="post-header"><h2>Users & Needs</h2></div>
-  <div class="card-body grid">
-    <div>
-      <h3>Users</h3>
-      <ul>
-        <li>Local residents: shade, seating, cultural design</li>
-        <li>Commuters: clear paths, quick-use space</li>
-        <li>Businesses: benefit from foot traffic</li>
-        <li>Visitors: need directions and identity</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Problems</h3>
-      <ul>
-        <li>Pedestrian conflicts</li>
-        <li>Seating not flexible</li>
-        <li>Poor lighting</li>
-        <li>Mostly pass-through space</li>
-      </ul>
-    </div>
-  </div>
-</article>
-
-<!-- BEFORE / AFTER -->
-<article class="post-card" id="improvements">
-  <div class="post-header"><h2>Before & After</h2></div>
-
-  <div class="card-body">
-
-    <div class="image-grid">
-      <img src="https://via.placeholder.com/400x250?text=Before+1">
-      <img src="https://via.placeholder.com/400x250?text=Before+2">
-      <img src="https://via.placeholder.com/400x250?text=After+1">
-      <img src="https://via.placeholder.com/400x250?text=After+2">
-    </div>
-
-    <div class="grid">
-      <div class="before">
-        <h3>Before</h3>
-        <ul>
-          <li>Not enough greenery or shade</li>
-          <li>Too much hard pavement</li>
-          <li>Limited seating</li>
-          <li>Low activity</li>
-        </ul>
-      </div>
-
-      <div class="after">
-        <h3>After</h3>
-        <ul>
-          <li>Added greenery and seating</li>
-          <li>Installed trash & recycling bins</li>
-          <li>Created more shade</li>
-          <li>Added shops & activity</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</article>
-
-<!-- BUDGET -->
-<article class="post-card" id="budget">
-  <div class="post-header"><h2>Budget & Cost Plan</h2></div>
-  <div class="card-body">
-    <table>
-      <tr><th>Improvement</th><th>Cost</th></tr>
-      <tr><td>Shade sails</td><td>$30k–$55k</td></tr>
-      <tr><td>Moveable seating</td><td>$15k–$25k</td></tr>
-      <tr><td>Vendor market zone</td><td>$25k–$45k</td></tr>
-      <tr><td>Wayfinding signs</td><td>$7k–$13k</td></tr>
-      <tr><td>Lighting</td><td>$10k–$20k</td></tr>
-    </table>
-    <p><strong>Total Cost:</strong> $87k–$158k</p>
-  </div>
-</article>
-
-</section>
-
-<!-- SIDEBAR -->
-<aside class="sidebar">
-
-<section class="intro">
-  <div class="logo">MS</div>
-  <img src="https://via.placeholder.com/300x180?text=Park+Image">
-  <h2>Montefiore Square</h2>
-  <p>Broadway, Hamilton Place, W. 138 St. — Manhattan</p>
-</section>
-
-<!-- PIE CHART -->
-<section class="budget-chart">
-  <img src="image.png" alt="Cost Analysis Pie Chart">
-  <p class="caption">Cost distribution based on mid-range estimates.</p>
-</section>
-
-<!-- WHY THIS MATTERS -->
-<section id="highlights">
-  <h3>Why This Matters</h3>
-
-  <p>
-    The transformation of Montefiore Plaza brings social and environmental benefits by
-    creating a welcoming space for community activities, improving safety, and supporting
-    local businesses. Added green infrastructure enhances air quality, reduces heat, and
-    manages stormwater, making the plaza more sustainable and improving overall quality
-    of life.
-  </p>
-
-  <p>
-    Montefiore Plaza’s transformation includes major infrastructure upgrades such as new
-    water, sewer, and drainage systems to prevent flooding and improve stormwater
-    management. Proper grading and underground systems help control rainwater,
-    especially around the terraced lawn. Additional utilities support lighting, irrigation,
-    and public amenities, while strong foundations ensure durability.
-  </p>
-
-  <p>
-    The long-term success depends on maintenance costing about $90,000 per year,
-    covering sanitation, horticulture, and repairs.
-  </p>
-
-  <p>
-    Sanitation includes cleaning and trash collection. Horticulture maintenance includes
-    plant care, watering, and pruning. Infrastructure repairs ensure paths, lighting,
-    and seating remain safe.
-  </p>
-
-  <p>
-    Overall, ongoing maintenance supports sustainability and keeps the plaza functional
-    for the community long-term.
-  </p>
-
-</section>
-
-</aside>
-
-</main>
-
 </body>
 </html>
