@@ -2,17 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Montefiore Square – Strongly Typed Edition</title>
+  <title>Montefiore Square – Parallel Visions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="dark-mode">
+<body>
 
-<!-- PROFILE BADGE -->
-<div id="profile-badge">M & S</div>
-
-<!-- FLOATING NAVIGATION -->
+<!-- FLOATING NAV -->
 <nav id="floating-nav">
   <a href="#about">About</a>
   <a href="#users">Users</a>
@@ -21,168 +18,161 @@
   <a href="#links">Links</a>
 </nav>
 
-<!-- HEADER -->
-<header id="header">
-  <h1>Montefiore Square Park Redesign</h1>
-  <p>Harlem community park improvement proposal</p>
-  <p class="authors">By Mahnoor Fatima and Shamor Johnson</p>
-</header>
+<!-- HERO (Beyoncé-style full screen) -->
+<section id="hero">
+  <div class="hero-overlay">
+    <h1>Montefiore Square</h1>
+    <p class="subtitle">Harlem community park improvement proposal</p>
+    <p class="authors">By Mahnoor Fatima and Shamor Johnson</p>
 
-<!-- FEATURED LINKS AT TOP -->
-<section id="featured" class="panel grid-2">
+    <div class="hero-text-block">
+      <p><strong>Manhattan • Mahnoor Fatima &amp; Shamor Johnson</strong></p>
+      <p>
+        Montefiore Square is located at Broadway, Hamilton Place, and West 138th Street.
+        This redesign improves safety, greenery, usability, and community identity.
+      </p>
 
-  <!-- MAP -->
-  <a class="resource-card" href="https://www.bing.com/maps/search?FORM=HDRSC6&q=Harlem+Montefiore+Plaza&cp=40.808792%7E-73.949867&lvl=13.5&style=r" target="_blank">
-    <img src="https://www.harlemworldmagazine.com/wp-content/uploads/2019/11/ny-design-final-6x4-1.jpg">
-    <h3>Montefiore Plaza Map</h3>
-    <p>Explore the plaza location and surrounding Harlem neighborhood.</p>
-  </a>
-
-  <!-- RESEARCH PAPER -->
-  <a class="resource-card" href="https://docs.google.com/document/d/1weDlWgdTxTsQWjpderH7LsIwDtYiK2gsdhf-s6L5PHA/edit?usp=sharing" target="_blank">
-    <img src="https://i.pinimg.com/736x/0e/21/2d/0e212d98aa0a33ebedf6a020de6c10e1.jpg" class="resource-img">
-    <h3>Research Paper — By M & S</h3>
-    <p>Full project research and documentation.</p>
-  </a>
-
+      <h3>About the Park</h3>
+      <ul>
+        <li>Open lawn with terraced stone seating</li>
+        <li>Garden with perennial plants</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<!-- MAIN CONTENT -->
-<div id="main">
-
-  <!-- INTRO -->
-  <section class="panel">
-    <h2>Montefiore Square</h2>
-    <p><strong>Manhattan • Mahnoor Fatima & Shamor Johnson</strong></p>
-
-    <p>
-      Montefiore Square is located at Broadway, Hamilton Place, and West 138th Street.
-      This redesign improves safety, greenery, usability, and community identity.
-    </p>
-
-    <h3>About the Park</h3>
-    <ul>
-      <li>Open lawn with terraced stone seating</li>
-      <li>Garden with perennial plants</li>
-    </ul>
-  </section>
+<!-- MAIN WRAPPER (Parallelism-style panels) -->
+<div id="wrapper">
 
   <!-- ABOUT THE PARK SLIDESHOW -->
-  <section class="panel">
-    <h2>Before the Redesign — Slideshow</h2>
+  <section id="about" class="panel">
+    <header>
+      <h2>Before the Redesign — Plaza Slideshow</h2>
+      <p>Visual history of Montefiore Square before the proposed improvements.</p>
+    </header>
 
     <div class="slideshow-container">
 
-      <!-- Slide 1 -->
       <div class="slide fade">
-        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finishe3___20140716485.jpg">
-        <p class="caption">Original plaza layout with heavy pavement and limited greenery.</p>
+        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finishe3___20140716485.jpg" alt="">
+        <p class="caption">Original plaza with heavy pavement and limited greenery.</p>
       </div>
 
-      <!-- Slide 2 -->
       <div class="slide fade">
-        <img src="https://www.nyc.gov/assets/dep/images/content/pages/whats-new/news/2022/22-003a.jpg">
-        <p class="caption">Infrastructure conditions before redesign improvements.</p>
+        <img src="https://www.nyc.gov/assets/dep/images/content/pages/whats-new/news/2022/22-003a.jpg" alt="">
+        <p class="caption">Infrastructure and surrounding streets before redesign.</p>
       </div>
 
-      <!-- Slide 3 -->
       <div class="slide fade">
-        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished-6___20140715402.jpg">
-        <p class="caption">Concrete-heavy plaza with minimal seating options.</p>
+        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished-6___20140715402.jpg" alt="">
+        <p class="caption">Concrete-dominated space with limited seating options.</p>
       </div>
 
-      <!-- Slide 4 -->
       <div class="slide fade">
-        <img src="https://static.wixstatic.com/media/f1eca6_8a667241b3994378a12846c92cc1a3a8~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/f1eca6_8a667241b3994378a12846c92cc1a3a8~mv2.jpg">
-        <p class="caption">Lack of shade and community gathering spaces.</p>
+        <img src="https://static.wixstatic.com/media/f1eca6_8a667241b3994378a12846c92cc1a3a8~mv2.jpg/v1/fill/w_980,h_653,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/f1eca6_8a667241b3994378a12846c92cc1a3a8~mv2.jpg" alt="">
+        <p class="caption">Lack of shade and defined gathering spaces for the community.</p>
       </div>
 
-      <!-- Arrows -->
-      <a class="prev">⚘</a>
-      <a class="next">⚘</a>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
 
+    <div class="dots">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
     </div>
   </section>
 
-  <!-- USERS -->
-  <section id="users" class="panel">
-    <h2>Users & Needs</h2>
+  <!-- USERS & NEEDS -->
+  <section id="users" class="panel split">
+    <div class="panel-text">
+      <header>
+        <h2>Users &amp; Needs</h2>
+        <p>Who uses Montefiore Square and what they need from this space.</p>
+      </header>
 
-    <div class="grid-3">
+      <h3>Users</h3>
+      <ul>
+        <li>Local residents: shade, seating, cultural design.</li>
+        <li>Commuters: clear paths and safe circulation.</li>
+        <li>Businesses: increased foot traffic and visibility.</li>
+        <li>Visitors: orientation, identity, and welcoming spaces.</li>
+      </ul>
 
-      <figure class="user-img">
-        <img src="https://www.nycgovparks.org/photo_gallery/full_size/25006.jpg">
-        <figcaption>Residents need shade, seating, and cultural identity.</figcaption>
-      </figure>
-
-      <figure class="user-img">
-        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished-2___20140716876.jpg">
-        <figcaption>Commuters need clear paths and safe movement.</figcaption>
-      </figure>
-
-      <figure class="user-img">
-        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished4___20140716056.jpg">
-        <figcaption>Visitors and businesses benefit from activity and identity.</figcaption>
-      </figure>
-
+      <h3>Problems</h3>
+      <ul>
+        <li>Pedestrian conflicts and unclear routes.</li>
+        <li>Inflexible, limited seating.</li>
+        <li>Poor lighting and safety perception.</li>
+        <li>Plaza used mainly as a pass-through, not a destination.</li>
+      </ul>
     </div>
 
-    <h3>Problems</h3>
-    <ul>
-      <li>Pedestrian conflicts</li>
-      <li>Seating not flexible</li>
-      <li>Poor lighting</li>
-      <li>Mostly pass-through space</li>
-    </ul>
+    <div class="panel-media grid-3">
+      <figure>
+        <img src="https://www.nycgovparks.org/photo_gallery/full_size/25006.jpg" alt="">
+        <figcaption>Current plaza layout with large paved surfaces.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished-2___20140716876.jpg" alt="">
+        <figcaption>Redesign construction showing new circulation patterns.</figcaption>
+      </figure>
+      <figure>
+        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished4___20140716056.jpg" alt="">
+        <figcaption>Improved edges and potential for gathering spaces.</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <!-- BEFORE & AFTER -->
-  <section id="improvements" class="panel">
-    <h2>Before & After</h2>
+  <!-- BEFORE & AFTER (PARALLEL PANELS) -->
+  <section id="improvements" class="panel split">
+    <div class="panel-text">
+      <header>
+        <h2>Before &amp; After</h2>
+        <p>From hardscape pass-through to a green, active community plaza.</p>
+      </header>
 
-    <div class="grid-2">
+      <p>
+        The redesign introduces more greenery, flexible seating, and safer circulation.
+        It transforms Montefiore Square into a place where people can gather, rest,
+        and participate in community life instead of just passing through.
+      </p>
+    </div>
 
-      <!-- BEFORE -->
+    <div class="panel-media grid-2">
       <div>
         <h3>Before</h3>
-
         <figure class="ba-image">
-          <img src="https://www.nycgovparks.org/photo_gallery/full_size/25006.jpg">
+          <img src="https://www.nycgovparks.org/photo_gallery/full_size/25006.jpg" alt="">
           <figcaption>Large paved plaza with minimal greenery.</figcaption>
         </figure>
-
         <figure class="ba-image">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-eR_oIdNiGAiyP5h_F57sySDkF13VSHS-apFWKWnsVCnFq3fBZB7_8qdhqhIO97BxRJXwdmICtyNuW0rfGp3opeYHo-wL9NirZAZV22AU0BKduqg77ilFFAZFnUuGKQsXTECwIDefGCjz_5ZbXduippa7Fzpqal5bEsotf5n2AaI6TJ2AZlSmyBkRmQ/s4029/montefiore.jpg">
+          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-eR_oIdNiGAiyP5h_F57sySDkF13VSHS-apFWKWnsVCnFq3fBZB7_8qdhqhIO97BxRJXwdmICtyNuW0rfGp3opeYHo-wL9NirZAZV22AU0BKduqg77ilFFAZFnUuGKQsXTECwIDefGCjz_5ZbXduippa7Fzpqal5bEsotf5n2AaI6TJ2AZlSmyBkRmQ/s4029/montefiore.jpg" alt="">
           <figcaption>Underused plaza with limited seating.</figcaption>
         </figure>
-
-        <figure class="ba-image">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCT4StQE67BLDLP60ZDENJuje2daxWc1SH3Dq6daUTYvXl1fd1bg9n3l_yuexi5tICgRc7JFBS9tpB47Fts31Fiwpbzt4sGsBAyhPLQb24BGHkuMVDnUeujlgTQiGk8gLBrg-34h6e8A3qiqeXL_Tp3JyF_s6EZ4UILUTz1N-cLNlRm3PLlljmfzkydw/s3674/unnamed-24.jpg">
-          <figcaption>Wide concrete surfaces with no shade.</figcaption>
-        </figure>
       </div>
-
-      <!-- AFTER -->
       <div>
-        <h3>After</h3>
-
+        <h3>After (Concept)</h3>
         <figure class="ba-image">
-          <img src="https://via.placeholder.com/400x250?text=After+Rendering+1">
-          <figcaption>Rendering of redesigned plaza with greenery.</figcaption>
+          <img src="https://via.placeholder.com/400x250?text=After+Rendering+1" alt="">
+          <figcaption>Concept rendering with added trees and flexible seating.</figcaption>
         </figure>
-
         <figure class="ba-image">
-          <img src="https://via.placeholder.com/400x250?text=After+Rendering+2">
-          <figcaption>Improved pedestrian flow and shaded areas.</figcaption>
+          <img src="https://via.placeholder.com/400x250?text=After+Rendering+2" alt="">
+          <figcaption>Improved pedestrian flow and shaded gathering areas.</figcaption>
         </figure>
       </div>
-
     </div>
   </section>
 
-  <!-- BUDGET -->
+  <!-- BUDGET & GRAPHS -->
   <section id="budget" class="panel">
-    <h2>Budget & Cost Plan</h2>
+    <header>
+      <h2>Budget &amp; Projected Impact</h2>
+      <p>How funds are focused and how the redesign supports public and economic growth.</p>
+    </header>
 
     <ul>
       <li>Shade sails — $30k–$55k</li>
@@ -193,43 +183,83 @@
       <li><strong>Total Cost:</strong> $87k–$158k</li>
     </ul>
 
+    <div class="grid-2 graphs">
+      <div class="graph-placeholder">
+        <h3>Pie Graph Placeholder</h3>
+        <p>Shows percentage focus on shade, seating, vendors, signage, and lighting.</p>
+      </div>
+      <div class="graph-placeholder">
+        <h3>Line Graph Placeholder</h3>
+        <p>Predicts growth in public interaction and local economic activity after the redesign.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINKS (MAP + RESEARCH PAPER) -->
+  <section id="links" class="panel">
+    <header>
+      <h2>Additional Resources</h2>
+      <p>Explore the site and the full research behind this proposal.</p>
+    </header>
+
     <div class="grid-2">
-      <div class="graph-placeholder">Pie Graph Placeholder<br><span>Focus Distribution (%)</span></div>
-      <div class="graph-placeholder">Line Graph Placeholder<br><span>Predicted Public & Economic Growth</span></div>
+      <a class="resource-card" href="https://www.bing.com/maps/search?FORM=HDRSC6&q=Harlem+Montefiore+Plaza&cp=40.808792%7E-73.949867&lvl=13.5&style=r" target="_blank">
+        <img src="https://www.harlemworldmagazine.com/wp-content/uploads/2019/11/ny-design-final-6x4-1.jpg" alt="">
+        <h3>Montefiore Plaza Map</h3>
+        <p>View the plaza location and its context within Harlem.</p>
+      </a>
+
+      <a class="resource-card" href="https://docs.google.com/document/d/1weDlWgdTxTsQWjpderH7LsIwDtYiK2gsdhf-s6L5PHA/edit?usp=sharing" target="_blank">
+        <img src="https://i.pinimg.com/736x/0e/21/2d/0e212d98aa0a33ebedf6a020de6c10e1.jpg" alt="">
+        <h3>Research Paper — By M &amp; S</h3>
+        <p>Full documentation of analysis, design process, and projected impacts.</p>
+      </a>
     </div>
   </section>
 
 </div>
 
-<!-- FOOTER -->
 <footer id="footer">
-  Montefiore Square Park Redesign — Harlem, Manhattan  
-  <br>Created by Mahnoor Fatima & Shamor Johnson
+  Montefiore Square Park Redesign — Harlem, Manhattan<br>
+  Created by Mahnoor Fatima &amp; Shamor Johnson
 </footer>
 
 <!-- SLIDESHOW SCRIPT -->
 <script>
-let slideIndex = 0;
-showSlides();
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function showSlides() {
-  let slides = document.getElementsByClassName("slide");
-  for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-  slideIndex++;
-  if (slideIndex > slides.length) slideIndex = 1;
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 4000);
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-document.querySelector(".prev").onclick = () => {
-  slideIndex -= 2;
-  showSlides();
-};
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-document.querySelector(".next").onclick = () => {
-  showSlides();
-};
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+document.querySelector(".prev").addEventListener("click", () => plusSlides(-1));
+document.querySelector(".next").addEventListener("click", () => plusSlides(1));
+
+// Auto-slide
+setInterval(() => { plusSlides(1); }, 5000);
 </script>
 
 </body>
 </html>
+
