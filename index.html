@@ -2,158 +2,794 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Harlem Montefiore Plaza</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Fancy Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Montefiore Plaza Reimagined</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    :root {
+      --green: #1f7a4d;
+      --deep-green: #0f3d2e;
+      --gold: #f4b942;
+      --cream: #fff8e8;
+      --blue: #1d4e89;
+      --purple: #5d3a9b;
+      --orange: #e76f51;
+      --dark: #17202a;
+      --white: #ffffff;
+      --gray: #f2f4f7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      background: linear-gradient(
+        135deg,
+        #fff8e8 0%,
+        #e8f6ef 45%,
+        #eaf2ff 100%
+      );
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    /* LOADING SCREEN */
+
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(135deg, #0f3d2e, #1d4e89);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.6s ease;
+    }
+
+    .spinner {
+      width: 85px;
+      height: 85px;
+      border: 8px solid rgba(255,255,255,0.2);
+      border-top: 8px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    .loading-title {
+      color: white;
+      margin-top: 20px;
+      font-size: 2rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* HEADER */
+
+    header {
+      background:
+        linear-gradient(rgba(15, 61, 46, 0.88),
+        rgba(29, 78, 137, 0.88)),
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop')
+        center/cover;
+      color: white;
+      padding: 110px 25px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      font-family: 'Cinzel', serif;
+      text-shadow: 0 0 18px rgba(255,255,255,0.25);
+    }
+
+    header p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.2rem;
+    }
+
+    .authors {
+      margin-top: 18px;
+      font-weight: 500;
+      opacity: 0.95;
+    }
+
+    /* BUTTONS */
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--deep-green);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* NAV */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: var(--dark);
+      padding: 12px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 10px;
+      transition: 0.3s ease;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    /* MAIN */
+
+    main {
+      max-width: 1180px;
+      margin: auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      margin-bottom: 55px;
+      background: rgba(255,255,255,0.95);
+      padding: 34px;
+      border-radius: 28px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: var(--deep-green);
+      font-size: 2.2rem;
+      margin-bottom: 18px;
+      font-family: 'Cinzel', serif;
+    }
+
+    h3 {
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      background: #fff0c2;
+      border-left: 8px solid var(--gold);
+      padding: 18px;
+      border-radius: 16px;
+      margin-top: 22px;
+      font-weight: 600;
+    }
+
+    /* GRID */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--gray);
+      padding: 24px;
+      border-radius: 22px;
+      border-top: 8px solid var(--green);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card:nth-child(2n) {
+      border-top-color: var(--blue);
+    }
+
+    .card:nth-child(3n) {
+      border-top-color: var(--orange);
+    }
+
+    .card:nth-child(4n) {
+      border-top-color: var(--purple);
+    }
+
+    .big-number {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--purple);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* SLIDER */
+
+    .gallery-section {
+      margin-top: 35px;
+    }
+
+    .slider {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      border-radius: 24px;
+      margin-top: 20px;
+      background: white;
+      padding: 18px 0;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    }
+
+    .slide-track {
+      display: flex;
+      width: calc(320px * 18);
+      animation: scrollSlider 55s linear infinite;
+    }
+
+    .slide-track img {
+      width: 300px;
+      height: 220px;
+      object-fit: cover;
+      margin: 0 10px;
+      border-radius: 18px;
+      border: 5px solid var(--green);
+      transition: transform 0.3s ease;
+      background: white;
+    }
+
+    .slide-track img:hover {
+      transform: scale(1.04);
+    }
+
+    @keyframes scrollSlider {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-320px * 9));
+      }
+    }
+
+    /* TABLE */
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      margin-top: 22px;
+    }
+
+    th, td {
+      border: 2px solid #d0d7de;
+      padding: 14px;
+      text-align: left;
+    }
+
+    th {
+      background: var(--deep-green);
+      color: white;
+    }
+
+    tr:nth-child(even) td {
+      background: #f7fbff;
+    }
+
+    /* CHARTS */
+
+    .chart-card {
+      background: white;
+      padding: 26px;
+      border-radius: 22px;
+      margin-top: 28px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+    }
+
+    .chart-note {
+      margin-top: 14px;
+      background: #fff8e8;
+      border-left: 6px solid var(--gold);
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+
+    /* FAQ */
+
+    details {
+      background: #f8fafc;
+      border: 2px solid #d0d7de;
+      border-radius: 14px;
+      padding: 16px;
+      margin-top: 14px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--deep-green);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 38px 20px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 24px;
+      }
+
+      nav {
+        position: static;
+      }
+
+      .slide-track img {
+        width: 240px;
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- LOADING SCREEN -->
-<div id="loading-screen">
-  <div class="spinner"></div>
-  <h1 class="loading-title">Harlem Montefiore Plaza</h1>
-</div>
+  <!-- LOADING SCREEN -->
 
-<header class="site-header">
-  <h1 class="glow-title">Harlem Montefiore Plaza</h1>
-  <p class="authors">By Mahnoor Fatima & Shamor Johnson</p>
-</header>
+  <div id="loading-screen">
+    <div class="spinner"></div>
+    <h1 class="loading-title">Montefiore Plaza Reimagined</h1>
+  </div>
 
-<main>
+  <!-- HEADER -->
 
-  <!-- PROJECT OVERVIEW -->
-  <section class="section">
-    <h2>Project Overview</h2>
+  <header>
+
+    <h1>Montefiore Plaza Reimagined</h1>
+
     <p>
-      Montefiore Plaza was transformed into a 44,000 sq ft public space with a terraced lawn, new seating, lighting, landscaping, and major underground upgrades. This project evaluates both the visible improvements and the hidden infrastructure supported by NYC DOT and DEP.
+      A community-centered, accessible, colorful, and financially realistic redesign proposal for Harlem.
     </p>
-    <p>
-      The goal is to understand whether this investment improves quality of life, sustainability, and economic activity in Harlem.
+
+    <p class="authors">
+      By Mahnoor Fatima & Shamor Johnson
     </p>
-  </section>
 
-  <!-- BEFORE SLIDER -->
-  <section class="section">
-    <h2>Before Images</h2>
-
-    <div class="slider">
-      <div class="slide-track">
-
-        <img src="https://i0.wp.com/thecitylife.org/wp-content/uploads/2022/01/20246.jpeg?w=640&ssl=1">
-        <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finishe3___20140716485.jpg">
-        <img src="https://static.wixstatic.com/media/f1eca6_8a667241b3994378a12846c92cc1a3a8~mv2.jpg">
-        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdjFtKnOPYOVOBRkyagg_3XEcneBNYLzJx4ra9WylltGinsuNrPHgFvGn2nMElgWxaSptsezBuBwdsOvqSGlIz920hQ7HazIjnm2jfHu7x_e67Q2obai6bBLOIcyJwNqDMyGYs1Up_zJR35dWiP4FdrSNFLu_qnzJIKnhB62fag0eK827NJnBacE-Xmw/s3897/unnamed-14.jpg">
-        <img src="https://djn2oq6v2lacp.cloudfront.net/wp-content/uploads/2022/01/harlem-641.png">
-        <img src="https://www.nycgovparks.org/photo_gallery/full_size/25009.jpg">
-        <img src="https://th.bing.com/th/id/OIP.btsiPkGtg5fRgggqfRL5_AHaE7?rs=1&pid=ImgDetMain">
-      <img src="https://tse2.mm.bing.net/th/id/OIP.2JrZp4FxnIVwDQ5NXylhxQHaFD?rs=1&pid=ImgDetMain">
-      <img src="IMG_0881.jpeg">
-      <img src="https://tse2.mm.bing.net/th/id/OIP.QN4FHZq0ffUutAxJgV-PFAHaE7?rs=1&pid=ImgDetMain">
-      <img src="https://patch.com/img/cdn20/users/23562214/20211220/021245/styles/raw/public/processed_images/harlem%20montefiore%20park%20square%20redesign%20reconstruction%20finished%208.jpg">
-      <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished4___20140716056.jpg">
-      <img src="https://static.wixstatic.com/media/f1eca6_03857b040c884a4b964e996061e74f1f~mv2.jpg">
-      <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished-6___20140715402.jpg">
-      <img src="https://tse3.mm.bing.net/th/id/OIP.rgcLLYXrZ969fKTY3-ikoQHaFj?rs=1&pid=ImgDetMain">
-      <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finished-6___20140715402.jpg">
-
-
-      </div>
+    <div class="button-row">
+      <a class="btn btn-primary" href="#proposal">Explore the Plan</a>
+      <a class="btn btn-secondary" href="#budget">View the Budget</a>
+      <a class="btn btn-secondary" href="#faq">Investor FAQ</a>
     </div>
-  </section>
 
-  <!-- SOCIAL & ENVIRONMENTAL IMPACT -->
-  <section class="section">
-    <h2>Social & Environmental Impact</h2>
-    <p>
-      The plaza now supports community events, markets, performances, and everyday gathering. Increased foot traffic boosts local businesses.
-    </p>
-    <p>
-      New trees, gardens, and stormwater systems improve air quality, reduce heat, and help prevent flooding.
-    </p>
-  </section>
+  </header>
 
-  <!-- INFRASTRUCTURE -->
-  <section class="section">
-    <h2>Infrastructure Upgrades</h2>
-    <p>
-      The redesign required replacing water mains, sewers, and drainage systems to prevent flooding and support long‑term sustainability.
-    </p>
-    <p>
-      New utilities power lighting, irrigation, and public amenities, supported by strong foundations and durable pathways.
-    </p>
-  </section>
+  <!-- NAV -->
 
-  <!-- AFTER SLIDER -->
-  <section class="section">
-    <h2>After Images</h2>
+  <nav>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#before-after">Gallery</a></li>
+      <li><a href="#proposal">Plan</a></li>
+      <li><a href="#budget">Budget</a></li>
+      <li><a href="#graphs">Graphs</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
 
-    <div class="slider">
-      <div class="slide-track">
+  <!-- MAIN -->
 
-        <img src="ChatGPT Image Apr 25, 2026, 12_17_40 AM.png">
-        <img src="ChatGPT Image Apr 25, 2026, 12_12_13 AM.png">
-        <img src="ChatGPT Image Apr 25, 2026, 12_13_21 AM.png">
-        <img src="ChatGPT Image Apr 25, 2026, 12_14_01 AM.png">
-        <img src="ChatGPT Image Apr 25, 2026, 12_29_22 AM.png">
+  <main>
 
-      </div>
-    </div>
-  </section>
+    <!-- OVERVIEW -->
 
-  <!-- BUDGET -->
-  <section class="section">
-    <h2>Budget Breakdown</h2>
+    <section id="overview">
 
-    <table class="budget-table">
-      <tr><th>Category</th><th>Estimated Cost</th></tr>
-      <tr><td>Infrastructure Upgrades</td><td>$7,000,000</td></tr>
-      <tr><td>Plaza Construction</td><td>$5,500,000</td></tr>
-      <tr><td>Landscaping</td><td>$3,000,000</td></tr>
-      <tr><td>Lighting & Amenities</td><td>$1,200,000</td></tr>
-      <tr><td>Design & Labor</td><td>$1,000,000</td></tr>
-      <tr><td><strong>Total</strong></td><td><strong>$18,400,000</strong></td></tr>
-    </table>
+      <h2>Project Overview</h2>
 
-    <div class="graph-row">
-      <div class="graph-placeholder">
-        <img src="image.png" alt="Pie Graph">
+      <p>
+        Montefiore Plaza in Harlem has the potential to become more than a walkway.
+        Our proposal transforms the plaza into a safe, active, green, and culturally meaningful public space.
+      </p>
+
+      <div class="highlight">
+        Main idea: A successful plaza should not be measured only by how expensive it is.
+        It should be measured by how well it serves the people who use it every day.
       </div>
 
-      <div class="graph-placeholder">
-        <p>LINE GRAPH</p>
+      <div class="grid">
+
+        <article class="card">
+          <span class="big-number">$18.4M</span>
+          <p>Original city investment used as a comparison point.</p>
+        </article>
+
+        <article class="card">
+          <span class="big-number">$13.6M–$14.2M</span>
+          <p>Projected redesign estimate using phased construction and partnerships.</p>
+        </article>
+
+        <article class="card">
+          <span class="big-number">3 Phases</span>
+          <p>Safety first, environmental upgrades second, cultural activation third.</p>
+        </article>
+
+        <article class="card">
+          <span class="big-number">All Ages</span>
+          <p>Designed for children, adults, seniors, and accessibility needs.</p>
+        </article>
+
       </div>
-    </div>
-  </section>
 
-  <!-- SMALL LINKS -->
-  <section class="section small-links">
-    <a href="https://www.bing.com/maps/search?FORM=HDRSC6&q=harlem+montefiore+plaza&cp=40.808792%7E-73.949867&lvl=13.5&style=r" target="_blank">Map</a>
+    </section>
 
-    <a href="https://docs.google.com/document/d/1w5A_PwUC0HWfWyFJj2s9Y9_DVxncleJS5wQb5Ssz4hk/edit?tab=t.0" target="_blank">Research Paper</a>
-  </section>
+    <!-- BEFORE & AFTER -->
 
-</main>
+    <section id="before-after">
 
-<footer class="site-footer">
-  <p>© Harlem Montefiore Plaza Project</p>
-</footer>
+      <h2>Before Montefiore Plaza vs. After Our Plan</h2>
 
-<script>
-window.onload = function() {
-  setTimeout(() => {
-    document.getElementById("loading-screen").style.opacity = "0";
-    setTimeout(() => {
-      document.getElementById("loading-screen").style.display = "none";
-    }, 600);
-  }, 1500);
-};
-</script>
+      <p>
+        The galleries below compare the existing conditions of Montefiore Plaza
+        with our proposed redesign vision.
+      </p>
+
+      <!-- BEFORE -->
+
+      <div class="gallery-section">
+
+        <h3>Before Images</h3>
+
+        <div class="slider">
+
+          <div class="slide-track">
+
+            <img src="https://i0.wp.com/thecitylife.org/wp-content/uploads/2022/01/20246.jpeg?w=640&ssl=1">
+
+            <img src="https://patch.com/img/cdn20/users/23562214/20211220/021411/styles/patch_image/public/harlem-montefiore-park-square-redesign-reconstruction-finishe3___20140716485.jpg">
+
+            <img src="https://static.wixstatic.com/media/f1eca6_8a667241b3994378a12846c92cc1a3a8~mv2.jpg">
+
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdjFtKnOPYOVOBRkyagg_3XEcneBNYLzJx4ra9WylltGinsuNrPHgFvGn2nMElgWxaSptsezBuBwdsOvqSGlIz920hQ7HazIjnm2jfHu7x_e67Q2obai6bBLOIcyJwNqDMyGYs1Up_zJR35dWiP4FdrSNFLu_qnzJIKnhB62fag0eK827NJnBacE-Xmw/s3897/unnamed-14.jpg">
+
+            <img src="https://djn2oq6v2lacp.cloudfront.net/wp-content/uploads/2022/01/harlem-641.png">
+
+            <img src="https://www.nycgovparks.org/photo_gallery/full_size/25009.jpg">
+
+            <img src="https://th.bing.com/th/id/OIP.btsiPkGtg5fRgggqfRL5_AHaE7?rs=1&pid=ImgDetMain">
+
+            <img src="https://tse2.mm.bing.net/th/id/OIP.2JrZp4FxnIVwDQ5NXylhxQHaFD?rs=1&pid=ImgDetMain">
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- AFTER -->
+
+      <div class="gallery-section">
+
+        <h3>After Images / Proposed Vision</h3>
+
+        <div class="slider">
+
+          <div class="slide-track">
+
+            <img src="ChatGPT Image Apr 25, 2026, 12_17_40 AM.png">
+
+            <img src="ChatGPT Image Apr 25, 2026, 12_12_13 AM.png">
+
+            <img src="ChatGPT Image Apr 25, 2026, 12_13_21 AM.png">
+
+            <img src="ChatGPT Image Apr 25, 2026, 12_14_01 AM.png">
+
+            <img src="ChatGPT Image Apr 25, 2026, 12_29_22 AM.png">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROPOSAL -->
+
+    <section id="proposal">
+
+      <h2>Our Redesign Proposal</h2>
+
+      <div class="grid">
+
+        <article class="card">
+          <h3>Green Infrastructure</h3>
+          <p>Add native trees, rain gardens, shaded seating, and permeable pavement.</p>
+        </article>
+
+        <article class="card">
+          <h3>Flexible Seating</h3>
+          <p>Use movable chairs, modular benches, and community tables.</p>
+        </article>
+
+        <article class="card">
+          <h3>Harlem Culture</h3>
+          <p>Murals, music, poetry, history displays, and public art.</p>
+        </article>
+
+        <article class="card">
+          <h3>Small Business Support</h3>
+          <p>Vendor kiosks, food spaces, and local weekend markets.</p>
+        </article>
+
+        <article class="card">
+          <h3>Safety by Design</h3>
+          <p>Lighting, visibility, and increased foot traffic.</p>
+        </article>
+
+        <article class="card">
+          <h3>Technology Access</h3>
+          <p>Wi-Fi, charging stations, and digital accessibility.</p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- BUDGET -->
+
+    <section id="budget">
+
+      <h2>Budget Breakdown</h2>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <tr>
+            <th>Category</th>
+            <th>Estimated Cost</th>
+          </tr>
+
+          <tr>
+            <td>Green Infrastructure</td>
+            <td>$3.2 million</td>
+          </tr>
+
+          <tr>
+            <td>Lighting & Technology</td>
+            <td>$1.5 million</td>
+          </tr>
+
+          <tr>
+            <td>Accessibility Improvements</td>
+            <td>$1.1 million</td>
+          </tr>
+
+          <tr>
+            <td>Vendor Areas</td>
+            <td>$900,000</td>
+          </tr>
+
+          <tr>
+            <td>Drainage & Pavement</td>
+            <td>$2 million</td>
+          </tr>
+
+          <tr>
+            <td>Community Programming</td>
+            <td>$400,000</td>
+          </tr>
+
+          <tr>
+            <td><strong>Total Estimate</strong></td>
+            <td><strong>$13.6M–$14.2M</strong></td>
+          </tr>
+
+        </table>
+
+      </div>
+
+    </section>
+
+    <!-- GRAPHS -->
+
+    <section id="graphs">
+
+      <h2>Financial & Community Impact Graphs</h2>
+
+      <div class="chart-card">
+        <h3>Cost Comparison</h3>
+        <canvas id="costChart"></canvas>
+
+        <p class="chart-note">
+          Our redesign estimate is lower than the original city investment.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- FAQ -->
+
+    <section id="faq">
+
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>Why is this redesign important?</summary>
+
+        <p>
+          It improves accessibility, safety, environmental quality,
+          local business opportunities, and community gathering space.
+        </p>
+      </details>
+
+      <details>
+        <summary>How could this cost less?</summary>
+
+        <p>
+          The proposal uses phased construction, modular systems,
+          sustainable materials, and partnerships.
+        </p>
+      </details>
+
+      <details>
+        <summary>Will the plaza support local businesses?</summary>
+
+        <p>
+          Yes. Vendor kiosks, markets, and event spaces help support Harlem businesses.
+        </p>
+      </details>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p><strong>Montefiore Plaza Redesign Proposal</strong></p>
+
+    <p>Created by Mahnoor Fatima & Shamor Johnson</p>
+
+    <p>Educational planning proposal project.</p>
+
+  </footer>
+
+  <!-- CHART SCRIPT -->
+
+  <script>
+
+    Chart.defaults.color = "#17202a";
+
+    new Chart(document.getElementById("costChart"), {
+
+      type: "bar",
+
+      data: {
+
+        labels: [
+          "Original City Project",
+          "Proposed Low Estimate",
+          "Proposed High Estimate"
+        ],
+
+        datasets: [{
+
+          label: "Cost in Millions",
+
+          data: [18.4, 13.6, 14.2],
+
+          backgroundColor: [
+            "#e76f51",
+            "#1f7a4d",
+            "#1d4e89"
+          ]
+
+        }]
+      },
+
+      options: {
+        responsive: true,
+
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+
+    });
+
+    /* LOADING SCREEN */
+
+    window.onload = function () {
+
+      setTimeout(() => {
+
+        document.getElementById("loading-screen").style.opacity = "0";
+
+        setTimeout(() => {
+
+          document.getElementById("loading-screen").style.display = "none";
+
+        }, 600);
+
+      }, 1400);
+
+    };
+
+  </script>
 
 </body>
 </html>
-
